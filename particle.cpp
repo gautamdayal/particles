@@ -2,11 +2,6 @@
 #include <iostream>
 
 
-Particle::Particle(Position p, Velocity v) {
-    pos = p;
-    vel = v;
-}
-
 Particle::Particle() {
     pos.x = GetRandomValue(1, kScreenWidth-1);
     pos.y = GetRandomValue(1, kScreenHeight-1);
