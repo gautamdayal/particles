@@ -2,29 +2,26 @@
 #include <vector>
 #include <iostream>
 
+
 int main(void) {
+    std::vector<Particle> cloud;
+    for (int i = 0; i < 50; i++) {
+        Particle to_add = Particle(5);
+        cloud.push_back(to_add);
+    }
     InitWindow(kScreenWidth, kScreenHeight, "Multiple Particles");
-    Particle p = Particle();
-    Particle q = Particle();
-    Particle r = Particle();
-    Particle s = Particle();
+
     SetTargetFPS(60);
 
     while (!WindowShouldClose()) {
-
-        p.UpdateParticle();
-        q.UpdateParticle();
-        r.UpdateParticle();
-        s.UpdateParticle();
-
+        for (Particle &p : cloud) {
+            p.UpdateParticle();
+        }
         BeginDrawing();
             ClearBackground((Color){ 245, 245, 245, 255 } );
-
-            DrawCircle(p.pos.x, p.pos.y, 10, (Color){30, 30, 30, 150});
-            DrawCircle(q.pos.x, q.pos.y, 10, (Color){30, 30, 30, 150});
-            DrawCircle(r.pos.x, r.pos.y, 10, (Color){30, 30, 30, 150});
-            DrawCircle(s.pos.x, s.pos.y, 10, (Color){30, 30, 30, 150});
-
+            for (Particle p : cloud) {
+                DrawCircle(p.pos.x, p.pos.y, p.radius, (Color){30, 30, 30, 150});
+            }
 
         EndDrawing();
     }
