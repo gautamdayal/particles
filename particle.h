@@ -44,5 +44,3 @@ struct ParticleSystem {
 
 float Distance(int x1, int y1, int x2, int y2);
 bool IsCollide(Particle &p1, Particle &p2);
-//     return Distance(p1.pos.x, p1.pos.y, p2.pos.x, p2.pos.y) <= p1.radius + p2.radius;
-// }

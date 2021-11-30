@@ -23,7 +23,7 @@ Particle::Particle(int in_id, int in_radius) {
     vel.y = GetRandomValue(3, 7);
 
     acc.x = 0;
-    acc.y = 0;
+    acc.y = 1;
 }
 
 void Particle::UpdateParticle() {
