@@ -1,8 +1,10 @@
 #include "raylib.h"
 #include <cmath>
+#include <iostream>
+#include <vector>
 
-const int kScreenWidth = 800;
-const int kScreenHeight = 450;
+const int kScreenWidth = 1200;
+const int kScreenHeight = 800;
 
 struct Position {
     int x;
@@ -15,24 +17,32 @@ struct Velocity {
 };
 
 struct Acceleration {
-    int x;
-    int y;
-}
+    float x;
+    float y;
+};
 
 struct Particle {
+    int id;
     int radius;
     Position pos;
     Velocity vel;
     Acceleration acc;
     Particle(int in_radius);
+    Particle(int in_id, int in_radius);
     void UpdateParticle();
-    friend bool IsCollide(Particle &p1, Particle &p2);
+    void DrawParticle();
 };
 
-float Distance(int x1, int y1, int x2, int y2) {
-    return sqrt(pow(y2-y1, 2) + pow(x2-x1, 2));
-}
+struct ParticleSystem {
+    int particle_num;
+    std::vector<Particle> particles;
+    void AddParticle();
+    void DrawSystem();
+    void UpdateSystem();
+    ParticleSystem(int in_num, int in_rad);
+};
 
-bool IsCollide(Particle &p1, Particle &p2) {
-    return Distance(p1.x, p1.y, p2.x, p2.y) <= p1.radius + p2.radius;
-}
+float Distance(int x1, int y1, int x2, int y2);
+bool IsCollide(Particle &p1, Particle &p2);
+//     return Distance(p1.pos.x, p1.pos.y, p2.pos.x, p2.pos.y) <= p1.radius + p2.radius;
+// }
