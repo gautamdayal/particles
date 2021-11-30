@@ -27,10 +27,10 @@ Particle::Particle(int in_id, int in_radius) {
 }
 
 void Particle::UpdateParticle() {
-    if (pos.x > kScreenWidth || pos.x < 0) {
+    if (pos.x + radius > kScreenWidth || pos.x - radius < 0) {
         vel.x *= -1;
     }
-    if (pos.y > kScreenHeight || pos.y < 0) {
+    if (pos.y + radius > kScreenHeight || pos.y - radius < 0) {
         vel.y *= -1;
     }
     pos.x += vel.x;
