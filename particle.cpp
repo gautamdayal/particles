@@ -69,7 +69,7 @@ void ParticleSystem::UpdateSystem() {
     }
 }
 
-// noice, line 69. anyways, this calculates the distance between 2 particles
+// this calculates the distance between 2 particles
 float Distance(int x1, int y1, int x2, int y2) {
     return sqrt(pow(y2-y1, 2) + pow(x2-x1, 2));
 }
