@@ -42,7 +42,7 @@ void Particle::UpdateParticle() {
 
 // draws a circle to enter the bouncing arena
 void Particle::DrawParticle() {
-    DrawCircle(pos.x, pos.y, radius, (Color){30, 30, 30, 150});
+    DrawCircle(pos.x, pos.y, radius, (Color){255, 60, 0, 150});
     // DrawTexture(frog_texture, pos.x, pos.y, (Color) {30, 30, 30, 150});
 }
 
