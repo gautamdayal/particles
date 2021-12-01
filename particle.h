@@ -31,6 +31,9 @@ struct Particle {
     Particle(int in_id, int in_radius);
     void UpdateParticle();
     void DrawParticle();
+
+    std::vector<Position> path_pixels;
+    void DrawPath();
 };
 
 struct ParticleSystem {

@@ -23,7 +23,7 @@ Particle::Particle(int in_id, int in_radius) {
     vel.y = GetRandomValue(3, 7);
 
     acc.x = 0;
-    acc.y = 1;
+    acc.y = 0;
 }
 
 void Particle::UpdateParticle() {
@@ -38,12 +38,24 @@ void Particle::UpdateParticle() {
 
     vel.x += acc.x;
     vel.y += acc.y;
+
+    if (IsKeyDown(KEY_SPACE)) {
+        path_pixels.push_back(pos);
+        DrawPath();
+    }
 }
 
 // draws a circle to enter the bouncing arena
 void Particle::DrawParticle() {
     DrawCircle(pos.x, pos.y, radius, (Color){255, 60, 0, 150});
     // DrawTexture(frog_texture, pos.x, pos.y, (Color) {30, 30, 30, 150});
+}
+
+
+void Particle::DrawPath() {
+    for (Position pixel : path_pixels) {
+        DrawCircle(pixel.x, pixel.y, 1, (Color) {0, 0, 0, 255});
+    }
 }
 
 // adds many bouncers(circles/particles) to the club(pun) of the same size
