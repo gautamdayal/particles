@@ -23,7 +23,7 @@ Particle::Particle(int in_id, int in_radius) {
     vel.y = GetRandomValue(3, 7);
 
     acc.x = 0;
-    acc.y = 0;
+    acc.y = 1;
 }
 
 void Particle::UpdateParticle() {
@@ -42,12 +42,14 @@ void Particle::UpdateParticle() {
     if (IsKeyDown(KEY_SPACE)) {
         path_pixels.push_back(pos);
         DrawPath();
+    } else {
+        path_pixels = {};
     }
 }
 
 // draws a circle to enter the bouncing arena
 void Particle::DrawParticle() {
-    DrawCircle(pos.x, pos.y, radius, (Color){255, 60, 0, 150});
+    DrawCircle(pos.x, pos.y, radius, (Color){0, 0, 0, 150});
     // DrawTexture(frog_texture, pos.x, pos.y, (Color) {30, 30, 30, 150});
 }
 

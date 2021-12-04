@@ -17,8 +17,13 @@ struct Velocity {
 };
 
 struct Acceleration {
-    float x;
-    float y;
+    double x;
+    double y;
+};
+
+struct Momentum {
+    double x;
+    double y;
 };
 
 struct Particle {
@@ -27,6 +32,7 @@ struct Particle {
     Position pos;
     Velocity vel;
     Acceleration acc;
+    Momentum p;
     Particle(int in_radius);
     Particle(int in_id, int in_radius);
     void UpdateParticle();

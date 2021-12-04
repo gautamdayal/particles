@@ -11,14 +11,14 @@ int main(void) {
     SetTargetFPS(60);
 
     while (!WindowShouldClose()) {
-        // s.UpdateSystem();
-        // s1.UpdateSystem();
+        s.UpdateSystem();
+        s1.UpdateSystem();
         s2.UpdateSystem();
 
         BeginDrawing();
             ClearBackground((Color){ 245, 245, 245, 255 } );
-            // s.DrawSystem();
-            // s1.DrawSystem();
+            s.DrawSystem();
+            s1.DrawSystem();
             s2.DrawSystem();
 
         EndDrawing();
