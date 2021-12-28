@@ -69,7 +69,7 @@ ParticleSystem::ParticleSystem(int in_num, int in_rad) {
     }
 }
 
-//  actually draws the circles computed by the previous fucktion
+//  actually draws the circles computed by the previous function
 void ParticleSystem::DrawSystem() {
     for (Particle &p : particles) {
         p.DrawParticle();
