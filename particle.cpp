@@ -19,8 +19,8 @@ Particle::Particle(int in_id, int in_radius) {
     pos.x = GetRandomValue(1, kScreenWidth-1);
     pos.y = GetRandomValue(1, kScreenHeight/2);
 
-    vel.x = GetRandomValue(3, 7);
-    vel.y = GetRandomValue(3, 7);
+    vel.x = 100 / (double)radius;
+    vel.y = 100 / (double)radius;
 
     acc.x = 0;
     acc.y = 1;
@@ -36,8 +36,8 @@ void Particle::UpdateParticle() {
     pos.x += vel.x;
     pos.y += vel.y;
 
-    vel.x += acc.x;
-    vel.y += acc.y;
+    // vel.x += acc.x;
+    // vel.y += acc.y;
 
     if (IsKeyDown(KEY_SPACE)) {
         path_pixels.push_back(pos);

@@ -1,3 +1,6 @@
+// cc -std=c++11 main.cpp particle.cpp -lstdc++ -framework IOKit -framework Cocoa -framework OpenGL `pkg-config --libs --cflags raylib` -o bin/ParticleTest
+
+
 #include "raylib.h"
 #include <cmath>
 #include <iostream>
@@ -12,8 +15,8 @@ struct Position {
 };
 
 struct Velocity {
-    int x;
-    int y;
+    double x;
+    double y;
 };
 
 struct Acceleration {

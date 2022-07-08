@@ -1,9 +1,9 @@
 #include "particle.h"
 
 int main(void) {
-    ParticleSystem s = ParticleSystem(20, 7);
-    ParticleSystem s1 = ParticleSystem(8, 14);
-    ParticleSystem s2 = ParticleSystem(4, 50);
+    ParticleSystem s = ParticleSystem(15, 7);
+    ParticleSystem s1 = ParticleSystem(6, 14);
+    ParticleSystem s2 = ParticleSystem(3, 50);
 
 
     InitWindow(kScreenWidth, kScreenHeight, "Multiple Particles");
