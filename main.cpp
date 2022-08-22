@@ -1,3 +1,10 @@
+/** 
+ * @file main.cpp
+ * @brief has main control flow
+ * 
+ * This has the main flowchart of the entire program ifykwim
+ */ 
+
 #include "particle.h"
 
 int main(void) {

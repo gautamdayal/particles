@@ -1,3 +1,11 @@
+/**
+ * @file particle.cpp
+ * @brief Has all class definitions
+ * @authors Doxygen Tester Person (GD)
+ * 
+ * LMaooo this is awesome
+ */ 
+
 #include "particle.h"
 // Image frog = LoadImage("frog.png");
 // Texture2D frog_texture = LoadTextureFromImage(frog);
@@ -13,6 +21,11 @@ Particle::Particle(int in_radius) {
     acc.y = 0;
 }
 
+/**
+ * @brief Constructor
+ * @param particle ID and particle radius
+ * @returns nothing
+ */ 
 Particle::Particle(int in_id, int in_radius) {
     id = in_id;
     radius = in_radius;
@@ -26,6 +39,12 @@ Particle::Particle(int in_id, int in_radius) {
     acc.y = 1;
 }
 
+/**
+ * @brief updates particle state
+ * @param none
+ * 
+ * This is another epic function moment
+ */ 
 void Particle::UpdateParticle() {
     if (pos.x + radius > kScreenWidth || pos.x - radius < 0) {
         vel.x *= -1;
